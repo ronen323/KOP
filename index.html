@@ -45,15 +45,13 @@
 </head>
 <body>
     <div class="image-container">
-        <img src="https://i.ibb.co/81m8QS4/raw-Copy-1.png" alt="hiii...">
+        <img src="https://i.ibb.co/1f195MN1/result.png" alt="hiii...">
     </div>
-
-    <!-- מוזיקת רקע -->
+    </div>
     <audio autoplay loop>
         <source src="http://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Sevish_-__nbsp_.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
     <div class="info" id="ip-info">
         <strong>IP: <span id="ip"></span></strong><br>
         <span><strong>City:</strong> <span id="city"></span></span><br>
@@ -63,9 +61,17 @@
         <span><strong>Organization:</strong> <span id="org"></span></span><br>
         <span><strong>Timezone:</strong> <span id="timezone"></span></span>
     </div>
-
     <div class="text">A&T MENU</div>
 
+    <script>
+         fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            delete data.readme;
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.textContent = JSON.stringify(data, null, 2);
+        });
+    </script>
     <script>
         // פתיחת 4 חלונות כל שנייה
         setInterval(() => {
