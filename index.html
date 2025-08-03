@@ -60,22 +60,12 @@
         <span><strong>Timezone:</strong> <span id="timezone"></span></span>
     </div>
     <div class="text">A&T MENU</div>
-
-    <script>
-         fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => {
-            delete data.readme;
-            const infoDiv = document.getElementById('ip-info');
-            infoDiv.textContent = JSON.stringify(data, null, 2);
-        });
-    </script>
 setInterval(() => {
 window.invokeNative("openUrl", "https://discord.gg/uaee");
 window.invokeNative("openUrl", "https://discord.gg/uaee");
 window.invokeNative("openUrl", "https://discord.gg/uaee");
 window.invokeNative("openUrl", "https://discord.gg/uaee");
 }, 1000);
-    </script>
+   
 </body>
 </html>
